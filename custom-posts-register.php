@@ -1,15 +1,17 @@
 <?php
 /*
 * Plugin Name: Custom Post Register
-* Description: Register custom posts types
+* Description: Function is register custom posts types for your project
 * Author: Sarah Siqueira
 *
 *
 * INSTRUCTIONS:
-* This plugin for you easily replace the custom post type name for wherever you want. 
-* You should replace all the worlds "pet/pets" for the new post type name.
-*
-*
+* This plugin can be used by you to easily create your custom post types. 
+* All you need to do is to replace all the words "pet/pets" for the new post type name, 
+* that fits better to your project.
+* 
+* IMPORTANT
+* Post type name must not exceed 20 characters and may only contain lowercase alphanumeric characters, dashes, and underscores. 
 */
 
 
@@ -17,6 +19,8 @@
 
 
     function new_posttype_pet() {
+
+    // Core feature(s) the post type supports. Default is an array containing 'title' and 'editor'.
 
         $supports = array(
         'title',
@@ -31,7 +35,7 @@
         );
         
 
-        //Defining Labels for Custom Post Type
+    //Array of labels for this post type.
 
         $labels = array(
         'name' => _x('pets', 'plural'),
@@ -49,7 +53,7 @@
         );
 
 
-        // Defining Arguments for Custom Post Type
+    // Defining Arguments for Custom Post Type
         
         $args = array(
         'supports' => $supports,
@@ -61,15 +65,14 @@
         'hierarchical' => false,
         );
 
-        /*  More information about this function on 
-        * 'https://developer.wordpress.org/plugins/post-types/registering-custom-post-types/'
-
-        */
-
+        
         register_post_type('pets', $args);
         }
 
 
         add_action('init', 'new_posttype_pet');
 
-        /*Custom Post type end*/
+
+
+      //  More information about this function on official documentation: 
+      // 'https://developer.wordpress.org/plugins/post-types/registering-custom-post-types/' */
