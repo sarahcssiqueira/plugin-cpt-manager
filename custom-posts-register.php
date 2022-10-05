@@ -1,18 +1,22 @@
 <?php
 /*
-* Plugin Name: Pet Register
-* Description: Register custom post type to store pets data.
+* Plugin Name: Custom Post Register
+* Description: Register custom posts types
 * Author: Sarah Siqueira
 *
+*
+* INSTRUCTIONS:
+* This plugin for you easily replace the custom post type name for wherever you want. 
+* You should replace all the worlds "pet/pets" for the new post type name.
+*
+*
 */
- 
-// require_once plugin_dir_path(__FILE__) . 'includes/cpr-functions.php' ;
 
 
 /* Custom Post Type Start */
 
 
-    function new_posttype() {
+    function new_posttype_pet() {
 
         $supports = array(
         'title',
@@ -27,7 +31,7 @@
         );
         
 
-        //Defining the Labels for Your Custom Post Type
+        //Defining Labels for Custom Post Type
 
         $labels = array(
         'name' => _x('pets', 'plural'),
@@ -45,7 +49,7 @@
         );
 
 
-        //Defining the Arguments for Your Custom Post Type
+        // Defining Arguments for Custom Post Type
         
         $args = array(
         'supports' => $supports,
@@ -57,39 +61,15 @@
         'hierarchical' => false,
         );
 
+        /*  More information about this function on 
+        * 'https://developer.wordpress.org/plugins/post-types/registering-custom-post-types/'
+
+        */
+
         register_post_type('pets', $args);
         }
 
-    // Hooking up our function
 
-        add_action('init', 'new_posttype');
+        add_action('init', 'new_posttype_pet');
 
-    /*Custom Post type end*/
-
-
-    /* For new posts, repeat and replace "pet/pets" for the new post type name.
-
-/*
-        function new_pettype() {
-            $labels = array(
-              'name'              => _x( 'Product Categories', 'taxonomy general name' ),
-              'singular_name'     => _x( 'Product Category', 'taxonomy singular name' ),
-              'search_items'      => __( 'Search Product Categories' ),
-              'all_items'         => __( 'All Product Categories' ),
-              'parent_item'       => __( 'Parent Product Category' ),
-              'parent_item_colon' => __( 'Parent Product Category:' ),
-              'edit_item'         => __( 'Edit Product Category' ), 
-              'update_item'       => __( 'Update Product Category' ),
-              'add_new_item'      => __( 'Add New Product Category' ),
-              'new_item_name'     => __( 'New Product Category' ),
-              'menu_name'         => __( 'Product Categories' ),
-            );
-            $args = array(
-              'labels' => $labels,
-              'hierarchical' => true,
-            );
-            register_taxonomy( 'product_category', 'product', $args );
-          }
-          add_action( 'init', 'new_pettype', 0 );
-
-          */
+        /*Custom Post type end*/
