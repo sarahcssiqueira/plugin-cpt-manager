@@ -1,21 +1,19 @@
 <?php
-/*
-* Plugin Name: Custom Post Register
-* Description: Function is register custom posts types for your project
-* Author: Sarah Siqueira
-*
-*
-* INSTRUCTIONS:
-* This plugin can be used by you to easily create your custom post types. 
-* All you need to do is to replace all the words "pet/pets" for the new post type name, 
-* that fits better to your project.
-* 
-* IMPORTANT
-* Post type name must not exceed 20 characters and may only contain lowercase alphanumeric characters, dashes, and underscores. 
+/**
+* Plugin Name:       Custom Post Register
+* Plugin URI:        https://sarahjobs.com/wordpress/plugins/cpt-register
+* Description:       Register custom posts types for your project
+* Version:           1.0.0
+* Requires at least: 5.4
+* Requires PHP:      7.4
+* Author:            Sarah Siqueira
+* Author URI:        https://sarahjobs.com/about
+* License:           GPLv2 or later
+* License URI:       https://www.gnu.org/licenses/gpl.html
+* Text Domain:       cpt-register
+* Domain Path:       /languages
+* Update URI:        https://sarahjobs.com/wordpress/plugins/cpt-register/update
 */
-
-
-/* Custom Post Type Start */
 
 
     function new_posttype_pet() {
