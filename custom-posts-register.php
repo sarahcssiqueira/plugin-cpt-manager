@@ -34,6 +34,7 @@ class CustomPostsRegister
     function register_cpt()
     {
         $cpt_name = 'Cpt';
+        $cpt_icon = 'dashicons-pressthis';
 
         register_post_type(
             '$cpt_name', array(
@@ -67,6 +68,7 @@ class CustomPostsRegister
                 'rewrite' => array('slug' => $cpt_name),
                 'has_archive' => true,
                 'hierarchical' => false,
+                'menu_icon' => $cpt_icon,
                 )
         );
     }
