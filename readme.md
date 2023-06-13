@@ -1,25 +1,24 @@
-# WordPress Posts Types
+# Custom Post Register
 
-By default, WordPress comes with five post types:
-- Post;
-- Page;
-- Attachment;
-- Revision;
-- Menu.
+WordPress Core provides five post types by default: Post, Page, Attachment, Revision and Menu. Although, while working on a project, we may need to create our specific content types, and that can be easily done with a few lines of code and is the purpose of this plugin, using the [**register_post_type()**](https://developer.wordpress.org/reference/functions/register_post_type/) function.
 
-While working on a project built with WordPress, we may need to create our specific content types, for example, movies, books, series, pets, and kinds of flowers (if it's a project for flower shop e-commerce or whatever).
+# Usage
 
-### WordPress Custom Posts Types
+For using this plugin, just clone this repository to your machine and paste it inside your WordPress plugins folder.
+Then go to the main file **custom-posts-register.php** and replace the value of the variable below with your desired custom post type name. 
 
-Here is the magic of custom post types in WordPress, the type of 'posts' can be anything we want, the limit is our imagination. We just need to create custom post types. That can be easily done with a few lines of code of plugins
+```
+    $cpt_name = 'Cpt';
+```
 
-### Registering a new custom post types
+You can also set a custom icon to be displayed on your WordPress admin panel, replace the value of the variable **cpt_icon** for one of the [WordPress Dashicons](https://developer.wordpress.org/resource/dashicons/) you prefer.
 
-There are amazing plugins available on the plugin repository that can help us with that, but, we also can do it with a few lines of code. Once a custom post type is registered, it gets a new top-level administrative screen that can be used to manage and create posts of that type.
-To register a new post type, we should use the [**register_post_type()**](https://developer.wordpress.org/reference/functions/register_post_type/) function.
+```
+    $cpt_icon = 'dashicons-media-code';
+```
 
-### Where the code goes?
+# Licensing
 
-Important: We also can add the code to the 'functions.php' file in our WordPress installation theme folder. But, unless we are using a child theme, the functions.php will override when we run some update of WordPress Core Files, so, the best practice, in this case (no child theme) is to create a plugin to register the custom post type we need for the project.
-For using this plugin, just clone this repo to your machine, then paste it inside your WordPress plugins folder. This readme.MD is not necessary at all so you can delete it.
-The PHP file is commented, so you quickly replace the custom post type name wherever you want.
+The code in this project is licensed under GPL v2 or later.
+
+[def]: https://developer.wordpress.org/resource/dashicons/

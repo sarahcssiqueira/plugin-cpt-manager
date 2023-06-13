@@ -21,7 +21,7 @@
 if(! defined('ABSPATH') ) { exit;
 }
 
-new CustomPostsRegister(); // Initialize
+new CustomPostsRegister();
 
 class CustomPostsRegister
 {
@@ -36,8 +36,8 @@ class CustomPostsRegister
         $cpt_name = 'Cpt';
         $cpt_icon = 'dashicons-media-code';
 
-        register_post_type(
-            '$cpt_name', array(
+        register_post_type('$cpt_name', 
+            array(
                 'supports' => array(
                     'title',
                     'editor',
