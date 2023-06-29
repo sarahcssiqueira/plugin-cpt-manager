@@ -5,17 +5,9 @@ WordPress Core provides five post types by default: Post, Page, Attachment, Revi
 ## Usage
 
 For using this plugin, just clone this repository to your machine and paste it inside your WordPress plugins folder.
-Then go to the main file **custom-posts-register.php** and replace the value of the variable below with your desired custom post type name. 
+Then go to the main file **custom-posts-register.php** and replace the custom post type name for with your desired.
 
-```
-    $cpt_name = 'Cpt';
-```
-
-You can also set a custom icon to be displayed on your WordPress admin panel, replace the value of the variable **cpt_icon** for one of the [WordPress Dashicons](https://developer.wordpress.org/resource/dashicons/) you prefer.
-
-```
-    $cpt_icon = 'dashicons-media-code';
-```
+You can also set a custom icon to be displayed on your WordPress admin panel, replace the value of the variable **'dashicons-media-code'** for one of the [WordPress Dashicons](https://developer.wordpress.org/resource/dashicons/) you prefer.
 
 ## Licensing
 

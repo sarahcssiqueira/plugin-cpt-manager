@@ -15,64 +15,58 @@
  * Update URI:        https://sarahjobs.com/wordpress/plugins/cpt-register/update
  */
 
-/**
- * Exit if accessed directly 
- **/
-if(! defined('ABSPATH') ) { exit;
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
 }
 
 new CustomPostsRegister();
 
-class CustomPostsRegister
-{
+class CustomPostsRegister {
 
-    function __construct()
-    {    
-        add_action('init', array($this, 'register_cpt'));
-    }
+	function __construct() {
+		add_action( 'init', array( $this, 'register_cpt' ) );
+	}
 
-    function register_cpt()
-    {
-        $cpt_name = 'Cpt';
-        $cpt_icon = 'dashicons-media-code';
+	function register_cpt() {
 
-        register_post_type('$cpt_name', 
-            array(
-                'supports' => array(
-                    'title',
-                    'editor',
-                    'author', 
-                    'thumbnail', 
-                    'excerpt', 
-                    'custom-fields', 
-                    'comments', 
-                    'revisions', 
-                    'post-formats', 
-                ),
-                'labels' => array(
-                    'name' => _x($cpt_name, 'plural'),
-                    'singular_name' => _x($cpt_name, 'singular'),
-                    'menu_name' => _x($cpt_name, 'admin menu'),
-                    'name_admin_bar' => _x($cpt_name, 'admin bar'),
-                    'add_new' => _x('Add' . ' ' . $cpt_name, 'add new' . $cpt_name),
-                    'add_new_item' => __('Add New' . ' ' . $cpt_name),
-                    'new_item' => __('New' . ' ' . $cpt_name, 'New' . ' ' . $cpt_name),
-                    'edit_item' => __('Edit' . ' ' . $cpt_name),
-                    'view_item' => __('View' . ' ' . $cpt_name),
-                    'all_items' => __('All' . ' ' . $cpt_name),
-                    'search_items' => __('Search' . $cpt_name),
-                    'not_found' => __('No' . ' ' .$cpt_name . ' found'),
-                ),
-                'public' => true,
-                'query_var' => true,
-                'rewrite' => array(
-                    'slug' => $cpt_name
-                ),
-                'has_archive' => true,
-                'hierarchical' => false,
-                'menu_icon' => $cpt_icon,
-                )
-        );
-    }
+		register_post_type(
+			'cptname',
+			array(
+				'supports'     => array(
+					'title',
+					'editor',
+					'author',
+					'thumbnail',
+					'excerpt',
+					'custom-fields',
+					'comments',
+					'revisions',
+					'post-formats',
+				),
+				'labels'       => array(
+					'name'           => _x( 'cptname', 'plural' ),
+					'singular_name'  => _x( 'cptname', 'singular' ),
+					'menu_name'      => _x( 'cptname', 'admin menu' ),
+					'name_admin_bar' => _x( 'cptname', 'admin bar' ),
+					'add_new'        => _x( 'Add cptname', 'add new cptname' ),
+					'add_new_item'   => __( 'Add New cptname' ),
+					'new_item'       => __( 'New cptname', 'New cptname' ),
+					'edit_item'      => __( 'Edit cptname' ),
+					'view_item'      => __( 'View cptname' ),
+					'all_items'      => __( 'All cptname' ),
+					'search_items'   => __( 'Search cptname' ),
+					'not_found'      => __( 'No cptname found' ),
+				),
+				'public'       => true,
+				'query_var'    => true,
+				'rewrite'      => array(
+					'slug' => 'cptname',
+				),
+				'has_archive'  => true,
+				'hierarchical' => false,
+				'menu_icon'    => 'dashicons-media-code',
+			)
+		);
+	}
 
 }
